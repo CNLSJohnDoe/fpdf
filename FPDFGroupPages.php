@@ -32,7 +32,11 @@ class FPDFGroupPages extends FPDF
         if($this->NewPageGroup)
         {
             // start a new group
-            $n = sizeof($this->PageGroups)+1;
+            if(empty($this->PageGroups)){
+                $n = 1;
+            }else{
+                $n = count($this->PageGroups)+1;
+            }
             $alias = "{nb$n}";
             $this->PageGroups[$alias] = 1;
             $this->CurrPageGroup = $alias;

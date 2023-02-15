@@ -476,7 +476,11 @@ if(!class_exists('FPDF'))
             include($this->_getfontpath().$file);
             if(!isset($name))
                 $this->Error('Could not include font definition file');
-            $i=count($this->fonts)+1;
+            if(empty($this->fonts)){
+                $i = 1;
+            }else{
+                $i = count($this->fonts)+1;
+            }
             $this->fonts[$fontkey]=array('i'=>$i,'type'=>$type,'name'=>$name,'desc'=>$desc,'up'=>$up,'ut'=>$ut,'cw'=>$cw,'enc'=>$enc,'file'=>$file);
             if($diff)
             {
