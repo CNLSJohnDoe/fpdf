@@ -1,4 +1,6 @@
 <?php
+namespace fpdf;
+
 /*******************************************************************************
  * Software: FPDF                                                               *
  * Version:  1.53                                                               *
@@ -13,7 +15,7 @@ if(!class_exists('FPDF'))
 {
     define('FPDF_VERSION','1.53');
 
-    class FPDF
+    class vendorFPDF
     {
 //Private properties
         var $page;               //current page number
