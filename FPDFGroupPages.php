@@ -1,8 +1,8 @@
 <?php
 namespace fpdf\FPDFGroupPages;
-require_once 'fpdf.php';
+use fpdf\vendorFPDF;
 
-class vendorFPDFGroupPages extends FPDF
+class vendorFPDFGroupPages extends vendorFPDF
 {
     private $NewPageGroup;   // variable indicating whether a new group was requested
     private $PageGroups;     // variable containing the number of pages of the groups
