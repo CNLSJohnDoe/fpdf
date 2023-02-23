@@ -15,7 +15,7 @@ namespace ExternalResources\FPDF;
 if (!class_exists('FPDF')) {
     define('FPDF_VERSION', '1.53');
 
-    class FPDF
+    class ExternalResourcesFPDF
     {
         //Private properties
 
@@ -453,7 +453,7 @@ if (!class_exists('FPDF')) {
             $w = 0;
             $l = strlen($s);
             for ($i = 0; $i < $l; $i++) {
-                $w += $cw[$s{$i}];
+                $w += $cw[$s[$i]];
             }
 
             return $w * $this->FontSize / 1000;
@@ -815,7 +815,7 @@ if (!class_exists('FPDF')) {
             $nl = 1;
             while ($i < $nb) {
                 //Get next character
-                $c = $s{$i};
+                $c = $s[$i];
                 if ($c == "\n") {
                     //Explicit line break
                     if ($this->ws > 0) {
@@ -898,7 +898,7 @@ if (!class_exists('FPDF')) {
             $nl = 1;
             while ($i < $nb) {
                 //Get next character
-                $c = $s{$i};
+                $c = $s[$i];
                 if ($c == "\n") {
                     //Explicit line break
                     $this->Cell($w, $h, substr($s, $j, $i - $j), 0, 2, '', 0, $link);
@@ -1253,12 +1253,12 @@ if (!class_exists('FPDF')) {
                 fclose($f);
                 $compressed = (substr($file, -2) == '.z');
                 if (!$compressed && isset($info['length2'])) {
-                    $header = (ord($font{0}) == 128);
+                    $header = (ord($font[0]) == 128);
                     if ($header) {
                         //Strip first binary header
                         $font = substr($font, 6);
                     }
-                    if ($header && ord($font{$info['length1']}) == 128) {
+                    if ($header && ord($font[$info['length1']]) == 128) {
                         //Strip second binary header
                         $font = substr($font, 0, $info['length1']).substr($font, $info['length1'] + 6);
                     }
@@ -1346,7 +1346,8 @@ if (!class_exists('FPDF')) {
         {
             $filter = ($this->compress) ? '/Filter /FlateDecode ' : '';
             reset($this->images);
-            while (list($file, $info) = each($this->images)) {
+            foreach ($this->images as $file => $info)
+            {
                 $this->_newobj();
                 $this->images[$file]['n'] = $this->n;
                 $this->_out('<</Type /XObject');
@@ -1526,7 +1527,7 @@ if (!class_exists('FPDF')) {
             if (!$orientation) {
                 $orientation = $this->DefOrientation;
             } else {
-                $orientation = strtoupper($orientation{0});
+                $orientation = strtoupper($orientation[0]);
                 if ($orientation != $this->DefOrientation) {
                     $this->OrientationChanges[$this->page] = true;
                 }
