@@ -1,5 +1,5 @@
 <?php
-namespace fpdf\advancedtables;
+namespace cnlsjohndoe\fpdf\advancedtables;
 /*******************************************************************************
 * FPDF                                                                         *
 *                                                                              *

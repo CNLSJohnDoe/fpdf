@@ -1,6 +1,6 @@
 <?php
 
-namespace fpdf\ExternalResources;
+namespace cnlsjohndoe\fpdf\ExternalResources;
 
 /*******************************************************************************
  * Software: FPDF                                                               *

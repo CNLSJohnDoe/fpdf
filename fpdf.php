@@ -1,5 +1,5 @@
 <?php
-namespace fpdf;
+namespace cnlsjohndoe\fpdf;
 
 /*******************************************************************************
  * Software: FPDF                                                               *
