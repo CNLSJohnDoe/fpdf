@@ -15,7 +15,7 @@ if(!class_exists('FPDF'))
 {
     define('FPDF_VERSION','1.53');
 
-    class vendorFPDF
+    class FPDF
     {
 //Private properties
         var $page;               //current page number
