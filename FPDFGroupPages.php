@@ -2,7 +2,7 @@
 namespace vendorfpdf;
 use fpdf\FPDF;
 
-class PDFGroupPages extends FPDF
+class FPDFGroupPages extends FPDF
 {
     private $NewPageGroup;   // variable indicating whether a new group was requested
     private $PageGroups;     // variable containing the number of pages of the groups
