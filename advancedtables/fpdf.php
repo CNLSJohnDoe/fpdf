@@ -1,5 +1,5 @@
 <?php
-namespace FPDF\advancedtables;
+namespace vendorfpdf\advancedtables;
 /*******************************************************************************
 * FPDF                                                                         *
 *                                                                              *

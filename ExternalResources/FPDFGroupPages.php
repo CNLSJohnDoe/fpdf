@@ -1,5 +1,5 @@
 <?php
-namespace FPDF\ExternalResources;
+namespace vendorfpdf\ExternalResources;
 
 class FPDFGroupPages extends FPDF
 {

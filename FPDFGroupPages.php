@@ -1,6 +1,6 @@
 <?php
-namespace FPDF;
-use FPDF\FPDF;
+namespace vendorfpdf;
+use vendorfpdf\FPDF;
 
 class PDFGroupPages extends FPDF
 {
