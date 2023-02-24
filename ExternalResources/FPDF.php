@@ -1,6 +1,6 @@
 <?php
 
-namespace vendorfpdf\ExternalResources;
+namespace fpdf\ExternalResources;
 
 /*******************************************************************************
  * Software: FPDF                                                               *

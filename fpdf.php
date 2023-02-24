@@ -1,5 +1,5 @@
 <?php
-namespace vendorfpdf;
+namespace fpdf;
 
 /*******************************************************************************
  * Software: FPDF                                                               *
