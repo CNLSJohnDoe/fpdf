@@ -1,6 +1,6 @@
 <?php
 
-namespace ExternalResources\FPDF;
+namespace FPDF\ExternalResources;
 
 /*******************************************************************************
  * Software: FPDF                                                               *
@@ -15,7 +15,7 @@ namespace ExternalResources\FPDF;
 if (!class_exists('FPDF')) {
     define('FPDF_VERSION', '1.53');
 
-    class ExternalResourcesFPDF
+    class FPDF
     {
         //Private properties
 
