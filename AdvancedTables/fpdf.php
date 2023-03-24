@@ -10,7 +10,7 @@ namespace cnlsjohndoe\fpdf\AdvancedTables;
 
 define('FPDF_VERSION','1.7');
 
-class FPDF
+class Fpdf
 {
 var $page;               // current page number
 var $n;                  // current object number
