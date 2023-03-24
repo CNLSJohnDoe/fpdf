@@ -15,7 +15,7 @@ namespace cnlsjohndoe\fpdf\ExternalResources;
 if (!class_exists('FPDF')) {
     define('FPDF_VERSION', '1.53');
 
-    class FPDF
+    class Fpdf
     {
         //Private properties
 

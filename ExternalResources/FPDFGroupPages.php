@@ -1,7 +1,7 @@
 <?php
 namespace cnlsjohndoe\fpdf\ExternalResources;
 
-class FPDFGroupPages extends FPDF
+class FpdfGroupPages extends FPDF
 {
     private $NewPageGroup;   // variable indicating whether a new group was requested
     private $PageGroups;     // variable containing the number of pages of the groups
