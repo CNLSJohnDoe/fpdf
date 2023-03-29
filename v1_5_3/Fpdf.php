@@ -1,6 +1,6 @@
 <?php
 
-namespace cnlsjohndoe\fpdf\ExternalResources;
+namespace cnlsjohndoe\fpdf\v1_5_3;
 
 /*******************************************************************************
  * Software: FPDF                                                               *
@@ -12,7 +12,7 @@ namespace cnlsjohndoe\fpdf\ExternalResources;
  * You may use, modify and redistribute this software as you wish.              *
  *******************************************************************************/
 
-if (!class_exists('FPDF')) {
+if (!class_exists('Fpdf')) {
     define('FPDF_VERSION', '1.53');
 
     class Fpdf
