@@ -1,5 +1,5 @@
 <?php
-namespace cnlsjohndoe\fpdf;
+namespace cnlsjohndoe\fpdf\v1_5_3;
 
 class FpdfGroupPages extends Fpdf
 {
