@@ -1153,8 +1153,8 @@ if (!class_exists('Fpdf')) {
 
         function _getfontpath()
         {
-            if (!defined('FPDF_FONTPATH') && is_dir(dirname(__FILE__).'/font')) {
-                define('FPDF_FONTPATH', dirname(__FILE__).'/font/');
+            if (!defined('FPDF_FONTPATH') && is_dir(realpath(__DIR__ . '/..').'/font')) {
+                define('FPDF_FONTPATH', realpath(__DIR__ . '/..').'/font/');
             }
 
             return defined('FPDF_FONTPATH') ? FPDF_FONTPATH : '';
