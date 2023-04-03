@@ -1,6 +1,6 @@
 <?php
 
-namespace ExternalResources\FPDF;
+namespace cnlsjohndoe\fpdf\v1_5_3;
 
 /*******************************************************************************
  * Software: FPDF                                                               *
@@ -12,10 +12,10 @@ namespace ExternalResources\FPDF;
  * You may use, modify and redistribute this software as you wish.              *
  *******************************************************************************/
 
-if (!class_exists('FPDF')) {
+if (!class_exists('Fpdf')) {
     define('FPDF_VERSION', '1.53');
 
-    class ExternalResourcesFPDF
+    class Fpdf
     {
         //Private properties
 
@@ -971,7 +971,6 @@ if (!class_exists('FPDF')) {
                     $type = substr($file, $pos + 1);
                 }
                 $type = strtolower($type);
-                $mqr = get_magic_quotes_runtime();
                 //set_magic_quotes_runtime(0);
                 if ($type == 'jpg' || $type == 'jpeg') {
                     $info = $this->_parsejpg($file);
@@ -985,7 +984,6 @@ if (!class_exists('FPDF')) {
                     }
                     $info = $this->$mtd($file);
                 }
-                //set_magic_quotes_runtime($mqr);
                 $info['i'] = count($this->images) + 1;
                 $this->images[$file] = $info;
             } else {
@@ -1153,8 +1151,8 @@ if (!class_exists('FPDF')) {
 
         function _getfontpath()
         {
-            if (!defined('FPDF_FONTPATH') && is_dir(dirname(__FILE__).'/font')) {
-                define('FPDF_FONTPATH', dirname(__FILE__).'/font/');
+            if (!defined('FPDF_FONTPATH') && is_dir(realpath(__DIR__ . '/..').'/font')) {
+                define('FPDF_FONTPATH', realpath(__DIR__ . '/..').'/font/');
             }
 
             return defined('FPDF_FONTPATH') ? FPDF_FONTPATH : '';
@@ -1236,7 +1234,6 @@ if (!class_exists('FPDF')) {
                 $this->_out('<</Type /Encoding /BaseEncoding /WinAnsiEncoding /Differences ['.$diff.']>>');
                 $this->_out('endobj');
             }
-            $mqr = get_magic_quotes_runtime();
             //set_magic_quotes_runtime(0);
             foreach ($this->FontFiles as $file => $info) {
                 //Font file embedding
@@ -1275,7 +1272,6 @@ if (!class_exists('FPDF')) {
                 $this->_putstream($font);
                 $this->_out('endobj');
             }
-            //set_magic_quotes_runtime($mqr);
             foreach ($this->fonts as $k => $font) {
                 //Font objects
                 $this->fonts[$k]['n'] = $this->n + 1;

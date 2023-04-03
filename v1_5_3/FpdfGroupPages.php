@@ -1,7 +1,7 @@
 <?php
-namespace ExternalResources\FPDF;
+namespace cnlsjohndoe\fpdf\v1_5_3;
 
-class ExternalResourcesFPDFGroupPages extends FPDF
+class FpdfGroupPages extends Fpdf
 {
     private $NewPageGroup;   // variable indicating whether a new group was requested
     private $PageGroups;     // variable containing the number of pages of the groups
@@ -50,7 +50,7 @@ class ExternalResourcesFPDFGroupPages extends FPDF
         if($this->NewPageGroup)
         {
             // start a new group
-            $n = sizeof($this->PageGroups)+1;
+            $n = count($this->PageGroups)+1;
             $alias = "{nb$n}";
             $this->PageGroups[$alias] = 1;
             $this->CurrPageGroup = $alias;
