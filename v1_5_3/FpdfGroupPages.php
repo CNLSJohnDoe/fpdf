@@ -50,7 +50,10 @@ class FpdfGroupPages extends Fpdf
         if($this->NewPageGroup)
         {
             // start a new group
-            $n = count($this->PageGroups)+1;
+            $n = 0;
+            if(!empty($this->PageGroups)){
+                $n = $this->PageGroups+1;
+            }
             $alias = "{nb$n}";
             $this->PageGroups[$alias] = 1;
             $this->CurrPageGroup = $alias;
