@@ -52,7 +52,7 @@ class FpdfGroupPages extends Fpdf
             // start a new group
             $n = 0;
             if(!empty($this->PageGroups)){
-                $n = $this->PageGroups+1;
+                $n = sizeof($this->PageGroups)+1;
             }
             $alias = "{nb$n}";
             $this->PageGroups[$alias] = 1;
